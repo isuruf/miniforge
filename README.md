@@ -1,22 +1,28 @@
 # miniforge
 [![Build Status](https://travis-ci.com/conda-forge/miniforge.svg?branch=master)](https://travis-ci.com/conda-forge/miniforge)
 
-This repository holds a minimal installer for conda on platforms that conda-forge supports but that aren't supported by [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
-
-**Important: This work is still very experimental.**
-
-Relevant conversations:
-
-- https://github.com/conda-forge/conda-forge.github.io/issues/871#issue-496677528
-- https://github.com/conda-forge/conda-forge.github.io/pull/922
+This repository holds a minimal installer for conda specific to conda-forge. It can be directly compared to [Miniconda](https://docs.conda.io/en/latest/miniconda.html), with the added feature that conda-forge is the default channel.
 
 ## Download
 
-Miniforge installers are available here: https://github.com/conda-forge/miniforge/releases.
+Miniforge installers are available here: https://github.com/conda-forge/miniforge/releases
 
-## Supported architectures
+Latest installers with python 3.7 in the base environment 
+#miniforge3
 
-- `aarch64` (also called `arm64`)
+- [linux-aarch64](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-aarch64.sh) (also called `arm64`)
+- [linux-ppc64le](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-ppc64le.sh) (also called `POWER8/9`)
+- [linux-x86_64](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh) (also called `amd64`)
+- [osx-x86_64](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-x86_64.sh)
+
+Latest installers with pypy3.6 in the base environment
+#miniforge-pypy3
+- [linux-aarch64](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge-pypy3-Linux-aarch64.sh)
+- [linux-ppc64le](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge-pypy3-Linux-ppc64le.sh)
+- [linux-x86_64](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge-pypy3-Linux-x86_64.sh)
+- [osx-x86_64](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge-pypy3-MacOSX-x86_64.sh)
+
+Follow the aarch64 and ppc64le migration status here: https://conda-forge.org/status/
 
 ## Features
 
@@ -45,7 +51,6 @@ Installers are built and uploaded via Travis but if you want to construct your o
 # Configuration
 export ARCH=aarch64
 export DOCKERIMAGE=condaforge/linux-anvil-aarch64
-export QEMU_BINARY=qemu-aarch64-static
 
 bash build_miniforge.sh
 ```
@@ -67,3 +72,10 @@ To release a new version of Miniforge:
 ## License
 
 [BSD 3-Clause](./LICENSE)
+
+## History
+
+Relevant conversations:
+
+- https://github.com/conda-forge/conda-forge.github.io/issues/871#issue-496677528
+- https://github.com/conda-forge/conda-forge.github.io/pull/922
