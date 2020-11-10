@@ -1,13 +1,5 @@
 name: Build miniforge
-on:
-  push:
-    tags:
-      - '*'
-    branches:
-      - '*'
-  pull_request:
-    branches:
-      - '*'
+on: [push, pull_request]
 
 jobs:
   build:
@@ -100,7 +92,7 @@ jobs:
         ls -alh build
 
     - name: Upload miniforge to release
-      uses: svenstaro/upload-release-action@v2
+      uses: svenstaro/upload-release-action@2.2.0
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: build/Miniforge*
