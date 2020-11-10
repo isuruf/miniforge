@@ -1,5 +1,13 @@
 name: Build miniforge
-on: [push, pull_request]
+on:
+  push:
+    tags:
+      - '*'
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
 
 jobs:
   build:
@@ -99,4 +107,5 @@ jobs:
         tag: ${{ github.ref }}
         overwrite: true
         file_glob: true
+        prerelease: true
       if: startsWith(github.ref, 'refs/tags/')
