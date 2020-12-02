@@ -28,3 +28,5 @@ specs:
   - conda {{ version.split("-")[0] }}
   - pip
   - bzip2
+  - conda-forge-ci-setup
+  - conda-build
